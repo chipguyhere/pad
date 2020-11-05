@@ -24,3 +24,5 @@ It has worked well in my projects.
   * from the correct CHANNEL structure, set GENERATOR to 0x40-0x47 (for capturing port A,C,E) and 
     0x48-0x4F (for capturing port B,D,F)
 * route the channel to the "event input" of the timer we're using
+* timing looks like it will be at 8MHz because Arduino doesn't set the system prescaler (so it's system clock)
+  and our slowest least-impact option is CLK_PRE/2. another option is to capture output of TCA0 if free.
